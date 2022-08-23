@@ -1,0 +1,31 @@
+<div class="alert alert-primary col-6 mx-auto" *ngIf="isLoading$" role="alert">
+    user successfully added
+  </div>
+<div class="card col-6 m-5 mx-auto">
+    <div class="card-body">
+        <h5 class="card-title text-center">Add User</h5>
+        <form [formGroup]="userForm" (ngSubmit)="submit()" novalidate class="m-4 col-11 " >
+ 
+            <app-input
+             [controls]="userForm?.controls.first_name"
+             inputId="firstName"
+             pla="Enter First Name"
+             label="First Name" ></app-input>
+
+           
+             <app-input
+             [controls]="userForm?.controls.last_name"
+             inputId="lastName"
+             pla="Enter Last Name"
+             label="Last Name" ></app-input>
+             <app-input
+             [controls]="userForm?.controls.email"
+             inputId="email"
+             pla="Enter Email"
+             label="Email" ></app-input>
+
+             <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+  </div>
+

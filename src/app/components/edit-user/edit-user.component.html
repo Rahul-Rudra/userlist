@@ -1,0 +1,32 @@
+
+<div class="card col-6 m-5 mx-auto">
+    <div class="card-body">
+        <h5 class="card-title text-center">Add User</h5>
+        <form [formGroup]="userForm" (ngSubmit)="submit()" novalidate class="m-4 col-11 " >
+             
+            <app-input
+             [controls]="userForm?.controls.first_name"
+             inputId="firstName"
+             pla="Enter First Name"
+             label="First Name" ></app-input>
+             <app-input
+             [controls]="userForm?.controls.last_name"
+             inputId="lastName"
+             pla="Enter Last Name"
+             label="Last Name" ></app-input>
+             <app-input
+             [controls]="userForm?.controls.email"
+             inputId="email"
+             pla="Enter Email"
+             label="Email" ></app-input>
+            <div class="mb-3">
+                <img [src]="userForm?.value?.avatar" class="me-2" style="height: 30px;width:30px; margin-left:10px" />
+                <input type="file" accept="image/*" (change)="selectedFile($event)" >
+            </div>
+
+             <button class="btn btn-secondary me-2" (click)="cancel()" type="button">Cancel</button>
+             <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+  </div>
+

@@ -1,0 +1,13 @@
+<div class="mb-3">
+    <label [for]="inputId" class="form-label fw-bold">{{label}}</label>
+    <input [formControl]="controls"
+    [placeholder]="pla"
+     [class.invalid]="controls.invalid && controls.dirty && controls.touched"
+    class="form-control" type="text" [id]="inputId" />
+   <ng-container *ngIf="controls.invalid && controls.dirty && controls.touched">
+    <div *ngFor="let err of controls.errors | keyvalue">
+       <p class="formError mt-1"> {{ errorMessage['required']}} </p>
+   </div>
+   </ng-container>
+</div>
+
