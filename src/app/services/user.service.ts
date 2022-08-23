@@ -55,7 +55,7 @@ updateItem(id: number , item: any): boolean {
     const index1  = currentItems.findIndex((element) => {
       return element.id === Number(id);
     });
-    console.log('ind',index1)
+   item.id=Number(id)
     if (index1 >= 0 ) {
       currentItems[index1] = item;
       console.log('item',item)
